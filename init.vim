@@ -31,6 +31,18 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 call plug#begin()
 
@@ -39,12 +51,6 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/preservim/nerdtree'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-
-"Plug 'Shougo/deoplete.nvim'
-"Plug 'zchee/deoplete-clang'
-"let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-14.so.1'
-"et g:deoplete#sources#clang#clang_header = '/usr/include/c++/11'
 
 Plug 'https://github.com/lukas-reineke/indent-blankline.nvim'
 
