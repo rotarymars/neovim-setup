@@ -1,4 +1,3 @@
 {
-  "suggest.noselect": true,
-	"snippets.priority": 200
+  "suggest.noselect": true
 }
