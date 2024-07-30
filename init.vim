@@ -6,7 +6,9 @@ set smarttab
 set softtabstop=2
 set mouse=a
 set relativenumber
-colorscheme slate
+colorscheme vim
+set clipboard+=unnamed
+let mapleader = "\<space>"
 
 " Use tab for trigger completion with characters ahead and navigate
 " NOTE: There's always complete item selected by default, you may want to enable
@@ -46,6 +48,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'https://github.com/lukas-reineke/indent-blankline.nvim'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+" or                                , { 'branch': '0.1.x' }
+
 call plug#end()
 "for lukas-reineke/indent-blankline.nvim
 lua require("ibl").setup()
@@ -53,4 +60,6 @@ lua require("ibl").setup()
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
 
