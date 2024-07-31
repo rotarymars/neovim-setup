@@ -1,5 +1,5 @@
 apt update
-apt install curl git sudo
+apt install curl git sudo clang clangd
 bash ./install-neovim.sh
 bash ./install-nodejs.sh
 bash ./vim-plug-install.sh
