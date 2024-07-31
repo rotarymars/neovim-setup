@@ -1,3 +1,4 @@
+apt update
 apt install curl git sudo
 bash ./install-neovim.sh
 bash ./install-nodejs.sh
