@@ -1,4 +1,4 @@
-apt install curl git
+apt install curl git sudo
 bash ./install-neovim.sh
 bash ./install-nodejs.sh
 bash ./vim-plug-install.sh
