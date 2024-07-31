@@ -5,6 +5,7 @@ set shiftwidth=2
 set smarttab
 set softtabstop=2
 set mouse=a
+set relativenumber
 colorscheme slate
 
 " Use tab for trigger completion with characters ahead and navigate

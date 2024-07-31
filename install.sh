@@ -1,5 +1,7 @@
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
- # Add to .bashrc
-# export PATH="$PATH:/opt/nvim-linux64/bin"
+apt install curl git
+bash ./install-neovim.sh
+bash ./install-nodejs.sh
+bash ./vim-plug-install.sh
+cp ./coc-settings.json ~/.config/nvim/coc-settings.json
+cp ./init.vim ~/.config/nvim/init.vim
+
