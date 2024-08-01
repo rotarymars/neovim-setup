@@ -6,9 +6,13 @@ set smarttab
 set softtabstop=2
 set mouse=a
 set relativenumber
+<<<<<<< HEAD
+colorscheme slate
+=======
 colorscheme vim
 set clipboard+=unnamed
 let mapleader = "\<space>"
+>>>>>>> d6af624f23727d0d62e1f9ec34a18f75bc13ebf4
 
 "disabling default plugins
 let g:did_install_default_menus = 1
