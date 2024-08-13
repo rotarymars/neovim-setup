@@ -1,5 +1,6 @@
-apt update
-apt install curl git sudo clang clangd
+sudo apt update
+sudo apt install curl git clang clangd exuberant-ctag pip3
+pip3 install jedi
 bash ./install-neovim.sh
 bash ./install-nodejs.sh
 bash ./vim-plug-install.sh

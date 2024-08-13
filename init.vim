@@ -73,6 +73,10 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 " or                                , { 'branch': '0.1.x' }
 
+Plug 'preservim/tagbar'
+
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 "for lukas-reineke/indent-blankline.nvim
 lua require("ibl").setup()
@@ -80,6 +84,8 @@ lua require("ibl").setup()
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nmap <F8> :TagbarToggle<CR>
 
+let g:NERDTreeDirArrowExpandable=""
+let g:NERDTreeDirArrowCollapsible=""
