@@ -8,6 +8,19 @@ set mouse=a
 set relativenumber
 colorscheme vim
 set clipboard+=unnamed
+let g:clipboard = {
+        \   'name': 'myClipboard',
+        \   'copy': {
+        \      '+': 'win32yank.exe -i',
+        \      '*': 'win32yank.exe -i',
+        \    },
+        \   'paste': {
+        \      '+': 'win32yank.exe -o',
+        \      '*': 'win32yank.exe -o',
+        \   },
+        \   'cache_enabled': 1,
+        \ }
+
 let mapleader = "\<space>"
 tnoremap <ESC> <c-\><c-n><Plug>(esc)
 nnoremap <Plug>(esc)<ESC> i<ESC>
