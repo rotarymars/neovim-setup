@@ -8,6 +8,7 @@ set mouse=a
 set relativenumber
 colorscheme vim
 set clipboard+=unnamed
+set nowrap
 let g:clipboard = {
         \   'name': 'myClipboard',
         \   'copy': {
