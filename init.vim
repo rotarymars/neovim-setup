@@ -8,6 +8,7 @@ set mouse=a
 set relativenumber
 colorscheme vim
 set clipboard+=unnamed
+hi MatchParen ctermfg=LightGreen ctermbg=blue
 set nowrap
 let g:clipboard = {
         \   'name': 'myClipboard',
@@ -28,6 +29,7 @@ nnoremap <Plug>(esc)<ESC> i<ESC>
 set showmatch
 set matchtime=1
 set matchpairs& matchpairs+=<:>
+set list listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 "disabling default plugins
 let g:did_install_default_menus = 1
@@ -91,15 +93,49 @@ Plug 'preservim/tagbar'
 
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'cohama/lexima.vim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'sindrets/diffview.nvim'
+
 call plug#end()
+
 "for lukas-reineke/indent-blankline.nvim
 lua require("ibl").setup()
 
-nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nmap <F8> :TagbarToggle<CR>
-
+nnoremap <F8> :TagbarToggle<CR>
+nnoremap <leader>ee <cmd>noh<CR>
+nnoremap commit <cmd>git add .<CR>git commit<CR>git push
 let g:NERDTreeDirArrowExpandable=""
 let g:NERDTreeDirArrowCollapsible=""
+
+" treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+  auto_install = true,
+
+  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+		additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
