@@ -6,7 +6,7 @@ set smarttab
 set softtabstop=2
 set mouse=a
 set relativenumber
-colorscheme vim
+colorscheme zaibatsu
 set clipboard+=unnamed
 hi MatchParen ctermfg=LightGreen ctermbg=blue
 set nowrap
@@ -85,7 +85,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/lukas-reineke/indent-blankline.nvim'
 
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 " or                                , { 'branch': '0.1.x' }
 
@@ -106,9 +105,10 @@ lua require("ibl").setup()
 
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>gg <cmd>Telescope live_grep<cr>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <leader>ee <cmd>noh<CR>
-nnoremap commit <cmd>git add .<CR>git commit<CR>git push
+nnoremap diff <cmd>DiffviewOpen<CR>
 let g:NERDTreeDirArrowExpandable=""
 let g:NERDTreeDirArrowCollapsible=""
 
