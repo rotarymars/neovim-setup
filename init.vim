@@ -98,6 +98,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'sindrets/diffview.nvim'
 
+Plug 'monkoose/neocodeium'
 call plug#end()
 
 "for lukas-reineke/indent-blankline.nvim
@@ -138,4 +139,21 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+" プラグインのセットアップ
+function! SetupNeocodeium()
+  lua require('neocodeium').setup()
+
+  " <Tab> にマッピング
+  inoremap <C-y> <CMD>lua require('neocodeium').accept()<CR>
+
+  " 次の候補を表示
+  inoremap <C-j> <CMD>lua require('neocodeium').cycle(1)<CR>
+
+  " 前の候補を表示
+  inoremap <C-k> <CMD>lua require('neocodeium').cycle(-1)<CR>
+endfunction
+
+" イベントに基づいて設定を実行
+autocmd VimEnter * call SetupNeocodeium()
 
