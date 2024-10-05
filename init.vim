@@ -6,7 +6,7 @@ set smarttab
 set softtabstop=2
 set mouse=a
 set relativenumber
-colorscheme zaibatsu
+colorscheme retrobox
 set clipboard+=unnamed
 hi MatchParen ctermfg=LightGreen ctermbg=blue
 set nowrap
@@ -105,8 +105,8 @@ call plug#end()
 lua require("ibl").setup()
 
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>gg <cmd>Telescope live_grep<cr>
+nnoremap <C-f> <cmd>Telescope find_files<cr>
+nnoremap <C-g> <cmd>Telescope live_grep<cr>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <leader>ee <cmd>noh<CR>
 nnoremap diff <cmd>DiffviewOpen<CR>
