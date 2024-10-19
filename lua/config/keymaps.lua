@@ -17,3 +17,7 @@ end)
 keymaps.set("i", "<C-a>", function()
   require("neocodeium").accept_line()
 end)
+
+keymaps.set("n", "diff", function()
+  require("diffview").open({})
+end)
