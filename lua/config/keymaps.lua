@@ -21,3 +21,17 @@ end)
 keymaps.set("n", "diff", function()
   require("diffview").open({})
 end)
+
+keymaps.set("t", "<C-\\>", [[<C-\><C-n>]])
+
+keymaps.set("n", "<C-f>", function()
+  require("telescope.builtin").find_files()
+end)
+
+keymaps.set("n", "<C-g>", function()
+  require("telescope.builtin").live_grep()
+end)
+
+keymaps.set("n", "<C-b>", function()
+  require("telescope.builtin").buffers()
+end)
