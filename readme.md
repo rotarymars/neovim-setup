@@ -9,6 +9,6 @@ sudo n stable
 sudo apt purge -y nodejs npm
 sudo apt autoremove -y
 
-sudo apt install -y curl git clang clangd exuberant-ctags pip
+sudo apt install -y curl git clang clangd exuberant-ctags pip ripgrep
 pip3 install jedi
 ```
