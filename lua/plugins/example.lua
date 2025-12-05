@@ -76,6 +76,8 @@ return {
         clangd = {},
         -- cmake-language-server for CMake support
         cmake = {},
+        -- docker-langserver for Dockerfile and docker-compose.yml
+        dockerls = {},
       },
     },
   },
@@ -187,6 +189,27 @@ return {
     end,
   },
 
+  -- configure gitsigns with colors for diff visualization
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      signs = {
+        add = { text = "▎" },
+        change = { text = "▎" },
+        delete = { text = "▎" },
+        topdelete = { text = "▎" },
+        changedelete = { text = "▎" },
+      },
+      signs_staged = {
+        add = { text = "▎" },
+        change = { text = "▎" },
+        delete = { text = "▎" },
+        topdelete = { text = "▎" },
+        changedelete = { text = "▎" },
+      },
+    },
+  },
+
   -- add any tools you want to have installed below
   {
     "mason-org/mason.nvim",
@@ -199,6 +222,7 @@ return {
         "clangd",
         "cmake-language-server",
         "clang-format",
+        "docker-language-server",
       },
     },
   },
