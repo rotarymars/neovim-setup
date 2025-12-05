@@ -174,6 +174,19 @@ return {
   },
 
 
+  -- configure indent scope with animation and delay
+  {
+    "nvim-mini/mini.indentscope",
+    opts = function()
+      return {
+        draw = {
+          delay = 100,
+          animation = require("mini.indentscope").gen_animation.linear({ duration = 100, unit = "total" }),
+        },
+      }
+    end,
+  },
+
   -- add any tools you want to have installed below
   {
     "mason-org/mason.nvim",
