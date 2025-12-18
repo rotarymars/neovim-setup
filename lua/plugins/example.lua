@@ -208,6 +208,16 @@ return {
     },
   },
 
+  -- disable python linters
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        python = {},  -- disable all python linters
+      },
+    },
+  },
+
   -- add any tools you want to have installed below
   {
     "mason-org/mason.nvim",
@@ -216,7 +226,6 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
-        "flake8",
         "clangd",
         "cmake-language-server",
         "clang-format",
