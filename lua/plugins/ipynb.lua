@@ -1,5 +1,7 @@
-{
-    'goerz/jupytext.nvim',
-    version = '0.2.0',
-    opts = {},  -- see Options
+return {
+  {
+    "goerz/jupytext.nvim",
+    version = "0.2.0",
+    opts = {}, -- see Options
+  },
 }
