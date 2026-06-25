@@ -68,7 +68,21 @@ return {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
         -- clangd for C++ support
-        clangd = {},
+        clangd = {
+          -- --query-driver lets clangd run cross-compilers (e.g. PlatformIO's
+          -- xtensa-esp32-elf-g++) to discover their built-in system include
+          -- paths. Needed for ESP32/embedded projects; harmless otherwise.
+          cmd = {
+            "clangd",
+            "--background-index",
+            "--clang-tidy",
+            "--header-insertion=iwyu",
+            "--completion-style=detailed",
+            "--function-arg-placeholders",
+            "--fallback-style=llvm",
+            "--query-driver=" .. vim.fn.expand("~") .. "/.platformio/packages/**/bin/*",
+          },
+        },
         -- cmake-language-server for CMake support
         cmake = {},
         -- docker-langserver for Dockerfile and docker-compose.yml
